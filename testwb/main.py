@@ -115,7 +115,7 @@ def analyze_rating(message):
     product = data["data"]["products"][0]
 
     rating = float(product.get("reviewRating", 0))
-    feedbacks = float(product.get("feedbacks", 0))
+    feedbacks = float(product.get("feedbacks", 1))
 
     result = rating / feedbacks
 
