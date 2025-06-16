@@ -23,7 +23,7 @@ def send_welcome(message):
 def send_info(message):
     if bool_login(message.chat.id):
         art = ARTICLE_ID
-        url = f"https://basket-01.wbbasket.ru/vol50/part5007/{art}/info/ru/card.json"
+        url = f"https://basket-01.wbbasket.ru/vol{art[0:2]}/part{art[0:4]}/{art}/info/ru/card.json"
         headers = {
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
             "referer": f"https://global.wildberries.ru/catalog/{art}/detail.aspx"
@@ -46,7 +46,7 @@ def analyze_price(message):
         return
 
     art = ARTICLE_ID
-    url = "https://basket-05.wbbasket.ru/vol816/part81699/81699980/info/price-history.json"
+    url = "https://basket-05.wbbasket.ru/vol{art[0:2]}/part{article[0:4]}/{article}/info/price-history.json"
     headers = {
         "user-agent": "Mozilla/5.0",
         "referer": f"https://global.wildberries.ru/catalog/{art}/detail.aspx"
